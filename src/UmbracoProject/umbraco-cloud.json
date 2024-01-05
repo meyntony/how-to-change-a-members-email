@@ -1,7 +1,17 @@
 {
   "Deploy": {
     "Project": {
-      "Workspaces": []
+      "Name": "how to change a members email",
+      "Alias": "how-to-change-a-members-email",
+      "Id": "d6576c57-359f-4ac6-b87b-bf6972b1b386",
+      "Workspaces": [
+        {
+          "Id": "b8e4773b-8cf9-4bb7-86d0-644e5a867498",
+          "Name": "Live",
+          "Type": "live",
+          "Url": "https://how-to-change-a-members-email.euwest01.umbraco.io"
+        }
+      ]
     },
     "Settings": {}
   },
