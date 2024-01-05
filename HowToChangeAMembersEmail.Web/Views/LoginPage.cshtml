@@ -1,0 +1,32 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.LoginPage>
+
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Security;
+@inject IMemberManager _memberManager;
+@using HowToChangeAMembersEmail.Web
+@{
+	Layout = "Master.cshtml";
+	var currentMember = await _memberManager.GetCurrentMemberAsync();
+}
+
+@if (currentMember == null)
+{
+	using (Html.BeginUmbracoForm<AuthenticationSurfaceController>(action: nameof(AuthenticationSurfaceController.Login)))
+	{
+		<input type="email" id="member_email" name="member_email" required>
+		<input type="password" id="member_password" name="member_password" required>
+		<input type="hidden" id="redirect_url" name="redirect_url">
+		<input type="submit" value="Login">
+	}
+}
+else
+{
+	<h1>Why are you trying to login again?</h1>
+}
+
+<script>
+	window.onload = async () => {
+		document.getElementById('redirect_url').value = new URL(window.location.href).pathname;
+	}
+</script>

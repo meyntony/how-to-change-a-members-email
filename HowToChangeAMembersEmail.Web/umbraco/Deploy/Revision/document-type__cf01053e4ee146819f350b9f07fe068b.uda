@@ -1,0 +1,26 @@
+{
+  "Name": "Login Page",
+  "Alias": "loginPage",
+  "DefaultTemplate": "umb://template/9c9fad47c6e64d9fb0e23406f37c5726",
+  "AllowedTemplates": [
+    "umb://template/9c9fad47c6e64d9fb0e23406f37c5726"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-item-arrangement",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "CompositionContentTypes": [],
+  "PropertyGroups": [],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/cf01053e4ee146819f350b9f07fe068b",
+  "Dependencies": [
+    {
+      "Udi": "umb://template/9c9fad47c6e64d9fb0e23406f37c5726",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "13.0.1"
+}

@@ -1,0 +1,14 @@
+{
+  "Name": "Access Denied",
+  "Alias": "AccessDenied",
+  "File": "umb://template-file/AccessDenied.cshtml",
+  "Udi": "umb://template/a7152c5e3ff5400cb5bb8611a47baa7a",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/AccessDenied.cshtml",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "13.0.1"
+}

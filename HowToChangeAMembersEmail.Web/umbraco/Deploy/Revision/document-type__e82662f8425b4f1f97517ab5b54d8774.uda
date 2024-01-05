@@ -10,13 +10,26 @@
   "Thumbnail": "folder.png",
   "Permissions": {
     "AllowedAtRoot": true,
-    "AllowedChildContentTypes": []
+    "AllowedChildContentTypes": [
+      "umb://document-type/cf01053e4ee146819f350b9f07fe068b",
+      "umb://document-type/b358264189a54d5e837a92b6ff90a003",
+      "umb://document-type/a51cd37b92a541979247ade51480b405"
+    ]
   },
   "CompositionContentTypes": [],
   "PropertyGroups": [],
   "PropertyTypes": [],
   "Udi": "umb://document-type/e82662f8425b4f1f97517ab5b54d8774",
   "Dependencies": [
+    {
+      "Udi": "umb://document-type/a51cd37b92a541979247ade51480b405"
+    },
+    {
+      "Udi": "umb://document-type/b358264189a54d5e837a92b6ff90a003"
+    },
+    {
+      "Udi": "umb://document-type/cf01053e4ee146819f350b9f07fe068b"
+    },
     {
       "Udi": "umb://template/378a2e07f01746eb9f00847c05d5bede",
       "Ordering": true

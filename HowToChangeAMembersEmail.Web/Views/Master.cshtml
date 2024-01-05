@@ -1,2 +1,25 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+﻿@using HowToChangeAMembersEmail.Web
+@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@using Umbraco.Cms.Core.Security;
+@inject IMemberManager _memberManager;
+
+@{
+    var currentMember = await _memberManager.GetCurrentMemberAsync();
+}
+
+@if (currentMember != null)
+{
+    using (Html.BeginUmbracoForm<AuthenticationSurfaceController>(action: nameof(AuthenticationSurfaceController.Logout)))
+    {
+        <input type="submit" value="Logout @currentMember.Name">
+    }
+}
+
+@foreach (var secretPage in Model.Children<SecretPage>())
+{
+    <a href="@secretPage.Url()">@secretPage.Name</a>
+}
+
+@RenderBody()

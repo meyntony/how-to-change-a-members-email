@@ -1,0 +1,26 @@
+{
+  "Name": "Access Issue",
+  "Alias": "accessIssue",
+  "DefaultTemplate": "umb://template/a7152c5e3ff5400cb5bb8611a47baa7a",
+  "AllowedTemplates": [
+    "umb://template/a7152c5e3ff5400cb5bb8611a47baa7a"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-item-arrangement",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "CompositionContentTypes": [],
+  "PropertyGroups": [],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/b358264189a54d5e837a92b6ff90a003",
+  "Dependencies": [
+    {
+      "Udi": "umb://template/a7152c5e3ff5400cb5bb8611a47baa7a",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "13.0.1"
+}

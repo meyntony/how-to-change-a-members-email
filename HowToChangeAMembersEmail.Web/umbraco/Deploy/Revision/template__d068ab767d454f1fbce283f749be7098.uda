@@ -1,0 +1,19 @@
+{
+  "Name": "Secret Page",
+  "Alias": "SecretPage",
+  "File": "umb://template-file/SecretPage.cshtml",
+  "Master": "umb://template/ba7d16327008487fa4deee4a0a7a3679",
+  "Udi": "umb://template/d068ab767d454f1fbce283f749be7098",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/SecretPage.cshtml",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/ba7d16327008487fa4deee4a0a7a3679",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "13.0.1"
+}

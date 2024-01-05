@@ -1,0 +1,19 @@
+{
+  "Name": "Login Page",
+  "Alias": "LoginPage",
+  "File": "umb://template-file/LoginPage.cshtml",
+  "Master": "umb://template/ba7d16327008487fa4deee4a0a7a3679",
+  "Udi": "umb://template/9c9fad47c6e64d9fb0e23406f37c5726",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/LoginPage.cshtml",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/ba7d16327008487fa4deee4a0a7a3679",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "13.0.1"
+}
