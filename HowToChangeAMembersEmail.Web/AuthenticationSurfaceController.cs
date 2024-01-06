@@ -93,7 +93,7 @@ namespace HowToChangeAMembersEmail.Web
             var currentMember = _memberService.GetByUsername(_memberManager.GetCurrentMemberAsync().Result.UserName);
 
             if (_memberManager.ValidateCredentialsAsync(username: currentMember.Username, password: member_password).Result
-                && existingMember?.Username != currentMember.Username)
+                && existingMember?.Email != currentMember.Email)
             {
                 if (existingMember != null)
                 {
