@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Net.Mail;
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Cms.Core.Logging;
 using Umbraco.Cms.Core.Routing;
@@ -12,7 +11,7 @@ using Umbraco.Cms.Web.Website.Controllers;
 
 namespace HowToChangeAMembersEmail.Web
 {
-    public sealed class AuthenticationSurfaceController : SurfaceController
+	public sealed class AuthenticationSurfaceController : SurfaceController
     {
         IMemberService _memberService;
         IMemberManager _memberManager;
@@ -42,16 +41,15 @@ namespace HowToChangeAMembersEmail.Web
         [HttpPost]
         public IActionResult Login(string member_email, string member_password, string redirect_url = "/")
         {
-            MailAddress mailAddress = new(member_email);
-            var email = mailAddress.ToString().ToLower();
-            var member = _memberService.GetByEmail(email);
+			EmailIdentifier mailAddress = member_email;
+            var member = _memberService.GetByUsername(mailAddress.ToString());
 
             if (member == null)
             {
                 // Create a new member if not exists
                 var memberIdentityUser = MemberIdentityUser.CreateNew(
-                        username: email,
-                        email: email,
+                        username: mailAddress.ToString(),
+                        email: mailAddress.GetRawValue(),
                         memberTypeAlias: "Member",
                         isApproved: true,
                         name: mailAddress.User);
@@ -90,9 +88,8 @@ namespace HowToChangeAMembersEmail.Web
         [HttpPost]
         public IActionResult ChangeEmail(string new_member_email, string member_password)
         {
-            MailAddress mailAddress = new(new_member_email);
-            var email = mailAddress.ToString().ToLower();
-            var existingMember = _memberService.GetByEmail(email);
+			EmailIdentifier mailAddress = new_member_email;
+            var existingMember = _memberService.GetByUsername(mailAddress.ToString());
             var currentMember = _memberService.GetByUsername(_memberManager.GetCurrentMemberAsync().Result.UserName);
 
             if (_memberManager.ValidateCredentialsAsync(username: currentMember.Username, password: member_password).Result
@@ -108,8 +105,8 @@ namespace HowToChangeAMembersEmail.Web
                     _memberService.Save(existingMember);
                     // lock the existingMember
                 }
-                currentMember.Username = email;
-                currentMember.Email = email;
+                currentMember.Username = mailAddress.ToString();
+                currentMember.Email = mailAddress.GetRawValue();
                 _memberService.Save(currentMember);
             }
 
